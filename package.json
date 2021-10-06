@@ -5,11 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo 'test'"
   },
   "author": "Dmitriy Dovgan",
   "license": "ISC",
   "dependencies": {
+    "@notionhq/client": "^0.3.0",
     "alfy": "^0.12.1"
   }
 }
