@@ -9,14 +9,16 @@ const notion = new Client({
 const { results } = await notion.search({ query: alfy.input });
 
 const getOutputData = (item) => {
+    const baseUrl = item.url.replace('https://', '')
+    const emojiIcon = getEmojiIcon(item)
+
     if (item.object === 'database') {
         // For some reason notion uses id in different format in links
-        const id = item.id.replace(/-/g, '');
         const title = item.title[0].plain_text;
 
         return {
-            title,
-            baseUrl: `//www.notion.so/${process.env.NOTION_USER}/${id}`
+            title: `${emojiIcon} ${title}`,
+            baseUrl,
         }
     }
 
@@ -26,13 +28,21 @@ const getOutputData = (item) => {
         const title = titleProperty?.title[0].plain_text || 'Unnamed result';
 
         return {
-            title,
+            title: `${emojiIcon} ${title}`,
             // page has explicit url, but to open in application we need to crop it
-            baseUrl: item.url.replace('https://', ''),
+            baseUrl,
         }
     }
 
     return null;
+}
+
+const getEmojiIcon = (item) => {
+    if (item.icon?.type !== 'emoji') {
+        return '';
+    }
+
+    return item.icon.emoji;
 }
 
 const getTitleProperty = (properties) => {
@@ -54,11 +64,13 @@ const output = results.map(item => {
         autocomplete: data.title,
         subtitle: 'Open in Notion',
         arg: `notion:/${data.baseUrl}`,
+        icon: { path: '/Applications/Notion.app', type: 'fileicon' },
         mods: {
             ctrl: {
                 title: data.title,
                 subtitle: 'Open in Browser',
                 arg: `https:${data.baseUrl}`,
+                icon: { path: '/Applications/Safari.app', type: 'fileicon' },
             }
         }
 

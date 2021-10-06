@@ -10,7 +10,7 @@
   "author": "Dmitriy Dovgan",
   "license": "ISC",
   "dependencies": {
-    "@notionhq/client": "^0.3.0",
+    "@notionhq/client": "^0.4.1",
     "alfy": "^0.12.1"
   }
 }

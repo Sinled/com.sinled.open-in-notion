@@ -7,7 +7,21 @@
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
-	<dict/>
+	<dict>
+		<key>8826DC19-11AC-4D7B-BDB3-CC318EFDD847</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F312615D-DF68-410F-8914-E4C44E01F308</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
 	<key>createdby</key>
 	<string>Sinled</string>
 	<key>description</key>
@@ -18,6 +32,25 @@
 	<string>Open in Notion</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>F312615D-DF68-410F-8914-E4C44E01F308</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -38,11 +71,11 @@
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
-				<true/>
+				<false/>
 				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
 				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
 				<key>runningsubtext</key>
 				<string>Loading</string>
 				<key>script</key>
@@ -79,7 +112,25 @@
 			<key>ypos</key>
 			<integer>270</integer>
 		</dict>
+		<key>F312615D-DF68-410F-8914-E4C44E01F308</key>
+		<dict>
+			<key>xpos</key>
+			<integer>350</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>NOTION_TOKEN</key>
+		<string></string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>NOTION_TOKEN</string>
+	</array>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
 	<string>https://github.com/Sinled</string>
 </dict>
